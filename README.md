@@ -1,2 +1,2 @@
 # Python-Snippets
-Python snippets for Me
+Python snippets for Practice, reuse, and automation in life.
