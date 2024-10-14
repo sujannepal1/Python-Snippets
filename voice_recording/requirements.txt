@@ -1,0 +1,3 @@
+wavio
+scipy
+soundevice
