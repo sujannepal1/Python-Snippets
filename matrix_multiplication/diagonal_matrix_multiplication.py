@@ -1,7 +1,17 @@
+# a diagonal matrix consists of only diagonal elements other are sparse
+
 import numpy as np
 
-a = np.array([[1, 2, 3], [3, 4, 5], [6, 7, 8]])
-b = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 1]])
+a = np.array([1, 2, 1])
+b = np.array([1, 1, 1])
+
+result = a * b
+
+print(np.diag(result))
+
+
+a = [[1, 2, 3], [3, 4, 5], [6, 7, 8]]
+b = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
 # M(row * column) = M[0] * M[0]
 size_of_a = f"{len(a)} x {len(a[0])}"
 size_of_b = f"{len(b)} x {len(b[0])}"
@@ -16,7 +26,6 @@ result = [
     [sum(a * b for a, b in zip(X_row, Y_col)) for Y_col in zip(*b)] for X_row in a
 ]
 
-# or
-
-result = np.dot(a, b)
 print(np.array(result))
+for r in result:
+    print(r)
