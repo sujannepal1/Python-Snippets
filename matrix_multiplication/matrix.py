@@ -37,6 +37,8 @@ class DiagonalMatrix:
         array = np.diag(self.matrix)
         return inverse_matrix(array)
 
+    def determinant(self):
+        pass
 
 matrix_a = DiagonalMatrix([1, 2, 3])
 matrix_b = DiagonalMatrix([1, 1, 1])
