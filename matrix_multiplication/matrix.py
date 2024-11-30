@@ -4,7 +4,7 @@ from numpy.linalg import inv as inverse_matrix
 INVALID_DIAGONAL_LENGTH = "Number of columns in the first matrix must be equal to the number of rows in the second matrix."
 
 
-class Matrix:
+class DiagonalMatrix:
     """
     Defaults to diagonal Matrix
     """
@@ -14,7 +14,7 @@ class Matrix:
         self._is_diagonal = is_diagonal
 
     def __mul__(self, other):
-        if not isinstance(other, Matrix):
+        if not isinstance(other, DiagonalMatrix):
             raise ValueError("Can only multiply with another Matrix.")
 
         if not self._is_diagonal or not other._is_diagonal:
@@ -26,7 +26,7 @@ class Matrix:
             raise ValueError(INVALID_DIAGONAL_LENGTH)
 
         result = self.matrix * other.matrix
-        return Matrix(result)
+        return DiagonalMatrix(result)
 
     def __repr__(self):
         if self._is_diagonal:
@@ -38,8 +38,8 @@ class Matrix:
         return inverse_matrix(array)
 
 
-matrix_a = Matrix([1, 2, 3])
-matrix_b = Matrix([1, 1, 1])
+matrix_a = DiagonalMatrix([1, 2, 3])
+matrix_b = DiagonalMatrix([1, 1, 1])
 
 matrix_c = matrix_a * matrix_b
 
