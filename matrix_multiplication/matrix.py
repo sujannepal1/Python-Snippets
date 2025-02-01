@@ -4,7 +4,7 @@ from numpy.linalg import inv as inverse_matrix
 INVALID_DIAGONAL_LENGTH = "Number of columns in the first matrix must be equal to the number of rows in the second matrix."
 
 
-class DiagonalMatrix:
+class  DiagonalMatrix:
     """
     Defaults to diagonal Matrix
     """
